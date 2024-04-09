@@ -46,7 +46,7 @@ function App() {
 
   return JPYRates ? (
     <div className="App">
-      <Table />
+      <Table JPYRates={JPYRates} />
     </div>
   ) : (
     <div className="App">Loading data...</div>
