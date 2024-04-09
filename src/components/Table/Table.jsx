@@ -1,7 +1,7 @@
 import "./Table.css";
 import currencySymbol from "currency-symbol";
 import he from "he";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Table({ JPYRates }) {
   const [currency, setCurrency] = useState("USD");
@@ -12,6 +12,11 @@ function Table({ JPYRates }) {
     200000, 300000, 400000, 500000, 1000000,
   ];
 
+  useEffect(() => {
+    const storedData = localStorage.getItem("currency");
+    if (storedData) setCurrency(storedData);
+  }, []);
+
   return (
     <div className="Table">
       <div className="Row">
@@ -20,6 +25,7 @@ function Table({ JPYRates }) {
           value={currency}
           onChange={(event) => {
             setCurrency(event.target.value);
+            localStorage.setItem("currency", event.target.value);
           }}
         >
           {listOfCurrency.map((val) => {
