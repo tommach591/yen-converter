@@ -44,7 +44,7 @@ function Table({ JPYRates }) {
       {commonYenSpendings.map((val) => {
         return (
           <div className="Row" key={val}>
-            <div>{`¥${val}`}</div>
+            <div>{`¥${val.toLocaleString()}`}</div>
             <div>
               {`${
                 currencySymbol.symbol(currency)
@@ -52,7 +52,7 @@ function Table({ JPYRates }) {
                   : ""
               }${(
                 Math.round(val * JPYRates.rates[currency] * 100) / 100
-              ).toFixed(2)}`}
+              ).toLocaleString(undefined, { minimumFractionDigits: 2 })}`}
             </div>
           </div>
         );
