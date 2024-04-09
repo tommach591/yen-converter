@@ -24,11 +24,13 @@
 
   background: rgb(30, 35, 50);
   color: white;
+  font-size: 20px;
+  padding: 1rem;
 }
 
 .Row > div {
   text-align: left;
 
   background: rgb(30, 35, 50);
-  padding: 0.5rem;
+  padding: 1rem;
 }

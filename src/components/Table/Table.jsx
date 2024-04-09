@@ -6,11 +6,15 @@ import { useEffect, useState } from "react";
 function Table({ JPYRates }) {
   const [currency, setCurrency] = useState("USD");
   const listOfCurrency = Object.keys(JPYRates.rates);
-  const commonYenSpendings = [
-    100, 200, 300, 400, 500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000,
-    9000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000, 100000,
-    200000, 300000, 400000, 500000, 1000000,
-  ];
+
+  const commonYenSpendings = Array.from(
+    { length: 10 },
+    (_, i) => (i + 1) * 100
+  ).concat(
+    Array.from({ length: 18 }, (_, i) => 1000 + (i + 1) * 500),
+    Array.from({ length: 90 }, (_, i) => 10000 + (i + 1) * 1000),
+    Array.from({ length: 20 }, (_, i) => 100000 + (i + 1) * 10000)
+  );
 
   useEffect(() => {
     const storedData = localStorage.getItem("currency");
