@@ -31,6 +31,10 @@
 .Row > div {
   text-align: left;
 
-  background: rgb(30, 35, 50);
+  background: rgb(55, 65, 85);
   padding: 1rem;
+}
+
+.Group > div {
+  background: rgb(30, 35, 50);
 }
