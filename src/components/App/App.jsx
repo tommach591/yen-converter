@@ -8,9 +8,44 @@ function App() {
 
   /* Set JPY Rates on load */
   useEffect(() => {
-    getRates().then((res) => {
-      setJPYRates(res);
-    });
+    // localStorage.clear();
+    const storedData = JSON.parse(localStorage.getItem("JPYRates"));
+    const todayUTC = new Date(
+      Date.UTC(
+        new Date().getUTCFullYear(),
+        new Date().getUTCMonth(),
+        new Date().getUTCDate(),
+        0,
+        0,
+        0,
+        0
+      )
+    );
+    const targetDateUTC = new Date(storedData?.time_next_update_utc);
+
+    const fetchData = async () => {
+      try {
+        getRates().then((res) => {
+          setJPYRates(res);
+          localStorage.setItem("JPYRates", JSON.stringify(res));
+        });
+      } catch (error) {
+        if (storedData) {
+          console.log("using last data");
+          setJPYRates(storedData);
+        } else console.error("Error fetching JPY Rates:", error);
+      }
+    };
+    fetchData();
+    if (todayUTC < targetDateUTC) {
+      /* Using last fetched data */
+      console.log("Cached");
+      setJPYRates(storedData);
+    } else {
+      /* Fetching new data */
+      console.log("Fetched");
+      fetchData();
+    }
   }, []);
 
   return JPYRates ? (
