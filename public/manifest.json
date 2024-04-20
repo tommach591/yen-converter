@@ -10,6 +10,8 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone"
+  "display": "standalone",
+  "theme_color": "rgb(30, 35, 50)",
+  "background_color": "rgb(55, 65, 85)"
 }
 
