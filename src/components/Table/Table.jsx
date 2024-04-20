@@ -28,7 +28,9 @@ function Table({ JPYRates }) {
     <div className="Table">
       <div className="Row Group">
         <div>JYP</div>
+        <label htmlFor="currencySelect" className="VisuallyHidden"></label>
         <select
+          id="currencySelect"
           value={currency}
           onChange={(event) => {
             setCurrency(event.target.value);
@@ -51,7 +53,7 @@ function Table({ JPYRates }) {
             JPYRates={JPYRates}
             currency={currency}
             list={set}
-            greaterThanThree={i > 1}
+            isTrue={i > 0}
           />
         );
       })}

@@ -3,8 +3,8 @@ import currencySymbol from "currency-symbol";
 import he from "he";
 import { useState } from "react";
 
-function Collapsible({ JPYRates, currency, list, greaterThanThree }) {
-  const [isCollapsed, setIsCollapsed] = useState(greaterThanThree);
+function Collapsible({ JPYRates, currency, list, isTrue }) {
+  const [isCollapsed, setIsCollapsed] = useState(isTrue);
 
   const toggleCollapse = () => {
     setIsCollapsed(!isCollapsed);
