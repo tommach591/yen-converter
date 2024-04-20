@@ -5,7 +5,8 @@
     {
       "src": "./images/512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "maskable"
     },
     {
       "src": "./images/192.png",
@@ -14,9 +15,7 @@
     },
     {
       "src": "./images/logo.svg",
-      "type": "image/svg+xml",
-      "sizes": "any",
-      "purpose": "maskable"
+      "type": "image/svg+xml"
     }
   ],
   "start_url": ".",
