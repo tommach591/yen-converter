@@ -3,29 +3,10 @@
   "name": "Yen Table",
   "icons": [
     {
-      "src": "./images/48.png",
+      "src": "./images/512.png",
       "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "./images/72.png",
-      "type": "image/png",
-      "sizes": "72x72"
-    },
-    {
-      "src": "./images/96.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "./images/128.png",
-      "type": "image/png",
-      "sizes": "128x128"
-    },
-    {
-      "src": "./images/192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "512x512",
+      "purpose": "maskable"
     },
     {
       "src": "./images/384.png",
@@ -33,10 +14,29 @@
       "sizes": "384x384"
     },
     {
-      "src": "./images/512.png",
+      "src": "./images/192.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "maskable"
+      "sizes": "192x192"
+    },
+    {
+      "src": "./images/128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "./images/96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "./images/72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "./images/48.png",
+      "type": "image/png",
+      "sizes": "48x48"
     }
   ],
   "start_url": ".",
