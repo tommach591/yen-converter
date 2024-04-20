@@ -12,11 +12,6 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "rgb(30, 35, 50)",
-  "background_color": "rgb(55, 65, 85)",
-  "splash": {
-    "image": "/images/logo192.png",
-    "sizes": "192x192",
-    "type": "image/png"
-  }
+  "background_color": "rgb(55, 65, 85)"
 }
 
