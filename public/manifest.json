@@ -3,9 +3,38 @@
   "name": "Yen Table",
   "icons": [
     {
+      "src": "./favicon.ico",
+      "sizes": "16x16 32x32 48x48"
+    },
+    {
+      "src": "./48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "./72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "./96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "./128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
       "src": "./192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "./384.png",
+      "type": "image/png",
+      "sizes": "384x384"
     },
     {
       "src": "./512.png",
