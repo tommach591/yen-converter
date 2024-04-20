@@ -3,6 +3,12 @@
   "name": "Yen Table",
   "icons": [
     {
+      "src": "./logo.webp",
+      "type": "image/webp",
+      "sizes": "any",
+      "purpose": "any maskable"
+    },
+    {
       "src": "./logo192.png",
       "type": "image/png",
       "sizes": "192x192",
