@@ -53,7 +53,7 @@ function Table({ JPYRates }) {
             JPYRates={JPYRates}
             currency={currency}
             list={set}
-            isTrue={i > 0}
+            isTrue={false}
           />
         );
       })}

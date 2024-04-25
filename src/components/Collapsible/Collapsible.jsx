@@ -4,13 +4,13 @@ import he from "he";
 import { useState } from "react";
 
 function Collapsible({ JPYRates, currency, list, isTrue }) {
-  const [isCollapsed, setIsCollapsed] = useState(isTrue);
+  const [isOpen, setIsOpen] = useState(isTrue);
 
   const toggleCollapse = () => {
-    setIsCollapsed(!isCollapsed);
+    setIsOpen(!isOpen);
   };
 
-  return isCollapsed ? (
+  return !isOpen ? (
     <div className="Collapsible" onClick={() => toggleCollapse()}>
       <div className="Row Group" key={list[0]}>
         <div>{`¥${list[0].toLocaleString()}`}</div>
