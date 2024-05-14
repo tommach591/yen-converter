@@ -14,6 +14,8 @@ function App() {
 
     const fetchData = async () => {
       try {
+        if (storedData) setJPYRates(storedData);
+
         const res = await getRates();
         setJPYRates(res);
         localStorage.setItem("JPYRates", JSON.stringify(res));
