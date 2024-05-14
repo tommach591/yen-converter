@@ -59,7 +59,9 @@ function Table({ JPYRates }) {
             type="number"
             value={value}
             onChange={(event) => {
-              setValue(event.target.value);
+              if (event.target.value > 0)
+                setValue(event.target.value.replace(/^0+/, ""));
+              else setValue(0);
             }}
           />
         </div>
