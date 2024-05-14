@@ -53,7 +53,10 @@ function Table({ JPYRates }) {
         </select>
       </div>
       <div className="Row">
-        <div className="Child">
+        <div
+          className="Child"
+          style={{ justifyContent: "center", paddingLeft: "0px" }}
+        >
           <h1>¥</h1>
           <input
             type="number"
