@@ -22,7 +22,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "rgb(30, 35, 50)",
-  "background_color": "rgb(55, 65, 85)"
+  "theme_color": "white"
 }
 
