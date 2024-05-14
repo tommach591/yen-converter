@@ -1,3 +1,18 @@
+.Collapsible {
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+
+  margin-top: 0px;
+}
+
+.Collapsible.Collapsed {
+  max-height: 4rem;
+}
+
+.Collapsible.Expanded {
+  max-height: 100rem;
+}
+
 .Arrow {
   height: 100%;
 

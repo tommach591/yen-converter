@@ -2,7 +2,8 @@
   width: 100%;
   max-width: 30rem;
 
-  margin-top: 1px;
+  margin-top: 3px;
+  padding-bottom: 1.5rem;
 }
 
 .VisuallyHidden {
@@ -17,8 +18,11 @@
 }
 
 .Row {
+  height: 4rem;
+
   position: relative;
   display: grid;
+
   grid-template-columns: 1fr 1fr;
 
   border: 1px solid white;
@@ -26,7 +30,7 @@
 
   background: white;
 
-  margin-top: -1px;
+  margin-top: -2px;
 }
 
 .Row > select {
@@ -56,9 +60,11 @@
   display: flex;
   align-items: center;
   width: 1fr;
+  height: 4rem;
+
   position: relative;
   text-align: left;
-  padding: 1rem;
+  padding-left: 1rem;
   overflow: hidden;
 }
 

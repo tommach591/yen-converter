@@ -4,35 +4,14 @@ import he from "he";
 import { useState } from "react";
 
 function Collapsible({ JPYRates, currency, list, isTrue }) {
-  const [isOpen, setIsOpen] = useState(isTrue);
+  const [isCollapsed, setIsCollapsed] = useState(isTrue);
 
   const toggleCollapse = () => {
-    setIsOpen(!isOpen);
+    setIsCollapsed(!isCollapsed);
   };
 
-  return !isOpen ? (
-    <div className="Collapsible" onClick={() => toggleCollapse()}>
-      <div className="Row Group" key={list[0]}>
-        <div className="Child">{`¥${list[0].toLocaleString()}`}</div>
-        <div className="Child">
-          {`${
-            currencySymbol.symbol(currency)
-              ? he.decode(currencySymbol.symbol(currency))
-              : ""
-          }${(
-            Math.round(list[0] * JPYRates.rates[currency] * 100) / 100
-          ).toLocaleString(undefined, { minimumFractionDigits: 2 })}`}
-        </div>
-        <div className="Arrow">
-          <img
-            src="https://api.iconify.design/material-symbols:arrow-drop-down.svg?color=%23ffffff"
-            alt=""
-          />
-        </div>
-      </div>
-    </div>
-  ) : (
-    <div className="Collapsible">
+  return (
+    <div className={`Collapsible ${isCollapsed ? "Collapsed" : "Expanded"}`}>
       {list.map((val, i) => {
         return (
           <div
@@ -53,7 +32,9 @@ function Collapsible({ JPYRates, currency, list, isTrue }) {
             {i === 0 ? (
               <div className="Arrow">
                 <img
-                  src="https://api.iconify.design/material-symbols:arrow-drop-up.svg?color=%23ffffff"
+                  src={`https://api.iconify.design/material-symbols:arrow-drop-${
+                    isCollapsed ? "down" : "up"
+                  }.svg?color=%23ffffff`}
                   alt=""
                 />
               </div>
