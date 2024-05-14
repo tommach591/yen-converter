@@ -1,8 +1,11 @@
-import Collapsable from "../Collapsible";
 import "./Table.css";
+import currencySymbol from "currency-symbol";
+import he from "he";
+import Collapsable from "../Collapsible";
 import { useEffect, useState } from "react";
 
 function Table({ JPYRates }) {
+  const [value, setValue] = useState(0);
   const [currency, setCurrency] = useState("USD");
   const listOfCurrency = ["USD", "CAD", "AUD", "EUR", "CNY"];
 
@@ -45,6 +48,27 @@ function Table({ JPYRates }) {
             );
           })}
         </select>
+      </div>
+      <div className="Row">
+        <div className="Child">
+          <h1>¥</h1>
+          <input
+            type="number"
+            value={value}
+            onChange={(event) => {
+              setValue(event.target.value);
+            }}
+          />
+        </div>
+        <div className="Child">
+          {`${
+            currencySymbol.symbol(currency)
+              ? he.decode(currencySymbol.symbol(currency))
+              : ""
+          }${(
+            Math.round(value * JPYRates.rates[currency] * 100) / 100
+          ).toLocaleString(undefined, { minimumFractionDigits: 2 })}`}
+        </div>
       </div>
       {sets.map((set, i) => {
         return (

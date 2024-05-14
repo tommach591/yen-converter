@@ -30,6 +30,7 @@
 }
 
 .Row > select {
+  width: 1fr;
   border: none;
   outline: none;
 
@@ -39,12 +40,30 @@
   padding: 1rem;
 }
 
-.Row > .Child {
+.Child > input {
+  width: 10rem;
   position: relative;
-  text-align: left;
+
+  border: none;
+  outline: none;
 
   background: rgb(55, 65, 85);
+  color: white;
+  font-size: 20px;
+}
+
+.Child {
+  display: flex;
+  align-items: center;
+  width: 1fr;
+  position: relative;
+  text-align: left;
   padding: 1rem;
+  overflow: hidden;
+}
+
+.Row > .Child {
+  background: rgb(55, 65, 85);
 }
 
 .Group > .Child {
