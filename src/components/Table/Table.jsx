@@ -27,7 +27,7 @@ function Table({ JPYRates }) {
   return (
     <div className="Table">
       <div className="Row Group">
-        <div>JYP</div>
+        <div className="Child">JYP</div>
         <label htmlFor="currencySelect" className="VisuallyHidden"></label>
         <select
           id="currencySelect"
