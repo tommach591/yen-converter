@@ -6,11 +6,11 @@
 }
 
 .Collapsible.Collapsed {
-  max-height: 3.94rem;
+  max-height: 63px;
 }
 
 .Collapsible.Expanded {
-  max-height: 45rem;
+  max-height: 704px;
 }
 
 .Arrow {

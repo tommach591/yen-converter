@@ -3,6 +3,7 @@ import currencySymbol from "currency-symbol";
 import he from "he";
 import { useState } from "react";
 
+/* React component display affected by CSS transition */
 function Collapsible({ JPYRates, currency, list, isTrue }) {
   const [isCollapsed, setIsCollapsed] = useState(isTrue);
 

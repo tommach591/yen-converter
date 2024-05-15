@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 function Table({ JPYRates }) {
   const [value, setValue] = useState(0);
   const [currency, setCurrency] = useState("USD");
-  const listOfCurrency = ["USD", "CAD", "AUD", "EUR", "CNY", "INR"];
+  const listOfCurrency = ["USD", "CAD", "AUD", "EUR", "CNY", "KRW", "INR"];
 
   const sets = [
     Array.from({ length: 9 }, (_, i) => (i + 1) * 100),
