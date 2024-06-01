@@ -24,6 +24,7 @@ function App() {
           setJPYRates(storedData);
         } else {
           console.error("Error fetching JPY Rates:", error);
+          localStorage.clear();
         }
       }
     };
