@@ -8,7 +8,9 @@ function App() {
 
   /* Set JPY Rates on load */
   useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem("JPYRates"));
+    const storedData = localStorage.getItem("JPYRates")
+      ? JSON.parse(localStorage.getItem("JPYRates"))
+      : null;
     const todayUTC = new Date().setUTCHours(0, 0, 0, 0); // Simplified today's date UTC
     const targetDateUTC = new Date(storedData?.time_next_update_utc).getTime();
 
