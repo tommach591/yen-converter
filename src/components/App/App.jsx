@@ -8,6 +8,7 @@ function App() {
 
   /* Set JPY Rates on load */
   useEffect(() => {
+    console.log(localStorage.getItem("JPYRates"));
     const storedData =
       localStorage.getItem("JPYRates") === undefined
         ? JSON.parse(localStorage.getItem("JPYRates"))
