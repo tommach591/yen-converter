@@ -8,17 +8,16 @@ function App() {
 
   /* Set JPY Rates on load */
   useEffect(() => {
-    const storedData =
-      localStorage.getItem("JPYRates") === undefined
-        ? JSON.parse(localStorage.getItem("JPYRates"))
-        : null;
+    const storedData = localStorage.getItem("JPYRates") 
+      ? JSON.parse(localStorage.getItem("JPYRates"))
+      : null;
     const todayUTC = new Date().setUTCHours(0, 0, 0, 0); // Simplified today's date UTC
-    const targetDateUTC = new Date(storedData?.time_next_update_utc).getTime();
-
+    const targetDateUTC = storedData ? new Date(storedData.time_next_update_utc).getTime() : 0;
+  
     const fetchData = async () => {
       try {
         if (storedData) setJPYRates(storedData);
-
+  
         const res = await getRates();
         setJPYRates(res);
         localStorage.setItem("JPYRates", JSON.stringify(res));
@@ -27,11 +26,10 @@ function App() {
           setJPYRates(storedData);
         } else {
           console.error("Error fetching JPY Rates:", error);
-          localStorage.clear();
         }
       }
     };
-
+  
     if (storedData && todayUTC < targetDateUTC) {
       setJPYRates(storedData);
     } else {
