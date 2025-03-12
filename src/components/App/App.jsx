@@ -42,7 +42,16 @@ function App() {
       <Table JPYRates={JPYRates} />
     </div>
   ) : (
-    <div className="App Load">Loading data...</div>
+    <div className="App Load">
+      <h1>Loading data...</h1>
+      <button onClick={() => {
+        localStorage.clear();
+        window.location.reload(false);
+      }
+      }>
+        Clear Local Storage
+      </button>
+      </div>
   );
 }
 
