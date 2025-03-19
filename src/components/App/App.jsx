@@ -8,11 +8,16 @@ function App() {
 
   /* Set JPY Rates on load */
   useEffect(() => {
-    const storedData = localStorage.getItem("JPYRates") 
-      ? JSON.parse(localStorage.getItem("JPYRates"))
-      : null;
+    const storedString = localStorage.getItem("JPYRates");
+    let storedData = null;
+  
+    try {
+      storedData = storedString ? JSON.parse(storedString) : null;
+    } catch (error) {
+      console.error("Error parsing stored JPYRates:", error);
+    }
     const todayUTC = new Date().setUTCHours(0, 0, 0, 0); // Simplified today's date UTC
-    const targetDateUTC = storedData ? new Date(storedData.time_next_update_utc).getTime() : 0;
+    const targetDateUTC = storedData ? new Date(storedData?.time_next_update_utc).getTime() : 0;
   
     const fetchData = async () => {
       try {
